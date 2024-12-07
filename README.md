@@ -40,25 +40,96 @@ OUTAGE.DURATION: The duration of the outage, which is the target variable for pr
 
 2.Univariate Analysis
 To better understand the distribution of key variables, we performed univariate analyses on the following columns:
-
-<iframe src="assets/yearly_power_outages.html" width="800" height="600" frameborder="0"></iframe>
-
-<iframe src="assets/power_outages_by_state.html" width="800" height="600" frameborder="0"></iframe>
+<iframe src="assets/power_outages_by_state.html" width="600" height="400" frameborder="0"></iframe>
 
 
 
+<iframe src="assets/yearly_power_outages.html" width="600" height="400" frameborder="0"></iframe>
 
-
+<iframe src="assets/power_outages_by_state.html" width="600" height="400" frameborder="0"></iframe>
 
 
 
 
 
 
+3. Bivariate Analysis
+To identify relationships between pairs of variables, we analyzed the following combinations:
+
+
+Extract the year from the OUTAGE.START.DATE and convert OUTAGE.DURATION to numeric
+
+<iframe src="assets/Year vs Outage Duration.html" width="600" height="400" frameborder="0"></iframe>
 
 
 
 
+Outage Duration by Climate Region
+
+<iframe src="assets/Outage Duration by Climate Region.html" width="600" height="400" frameborder="0"></iframe>
 
 
-<iframe src="assets/Power_Outages_by_Climate_Category_and_State.html" width="800" height="600" frameborder="0"></iframe>
+
+it seems that month of the OUTAGE.START.TIME have some patterns with outrage duration
+<iframe src="assets/Average Outage Duration by Month.html" width="600" height="400" frameborder="0"></iframe>
+
+
+
+
+# Redefine the "DAY_TYPE" column based on the new weekday/weekend definition
+now, we define weekday as Monday-Thursday and count Friday- Sunday as weekend
+as we can see, there is a clear difference, because accidents that happens at the end of the week are more likelytake longer because less worker is available at weekends
+<iframe src="assets/Average Outage Duration by Day Type (New Definition: Weekday vs Weekend).html" width="600" height="400" frameborder="0"></iframe>
+
+
+# Extract the hour from the "OUTAGE.START.TIME" column and add it as a new column
+#it seems that hour of the day in OUTAGE.START.TIME also effects the OUTAGE.DURATION
+# accidents that happens in midnight - morning tend to recover much longer
+<iframe src="assets/Average Outage Duration by Hour.html" width="600" height="400" frameborder="0"></iframe>
+
+
+
+Average Outage Duration by U.S. State
+
+<iframe src="assets/Average Outage Duration by U.S. State.html" width="600" height="400" frameborder="0"></iframe>
+
+
+
+It seems that NERC region also affects the duration Calculate the average outage duration for each NERC region
+
+<iframe src="assets/Average Outage Duration by NERC Region.html" width="600" height="400" frameborder="0"></iframe>
+
+
+it seems that climate category are pretty unrelated to our dutation prediction
+
+<iframe src="assets/Average Outage Duration by Climate Category.html" width="600" height="400" frameborder="0"></iframe>
+
+
+
+# Calculate the average outage duration for each anomaly level
+#it seems that anomaly level is pretty unrelated to our prediction of duration, i see no clear pattern
+
+<iframe src="assets/Average Outage Duration by Anomaly Level.html" width="600" height="400" frameborder="0"></iframe>
+
+
+Outage Duration vs Anomaly Level
+
+<iframe src="assets/Outage Duration vs Anomaly Level.html" width="600" height="400" frameborder="0"></iframe>
+
+
+
+4. Interesting Aggregates
+We aggregated data to uncover significant patterns:
+
+Average Outage Duration by State:
+
+
+<iframe src="assets/power_outages_per_state.html" width="600" height="400" frameborder="0"></iframe>
+
+
+5. Imputation
+Imputation was applied where necessary to handle missing values in key columns
+We don’t have a lot of missing data
+
+
+
