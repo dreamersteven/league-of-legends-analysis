@@ -40,13 +40,10 @@ OUTAGE.DURATION: The duration of the outage, which is the target variable for pr
 
 2.Univariate Analysis
 To better understand the distribution of key variables, we performed univariate analyses on the following columns:
-<iframe src="assets/power_outages_by_state.html" width="600" height="400" frameborder="0"></iframe>
 
+<iframe src="assets/Yearly Count of Major Power Outages.html" width="600" height="400" frameborder="0"></iframe>
 
-
-<iframe src="assets/yearly_power_outages.html" width="600" height="400" frameborder="0"></iframe>
-
-<iframe src="assets/power_outages_by_state.html" width="600" height="400" frameborder="0"></iframe>
+<iframe src="assets/power_outages_per_state.html" width="600" height="400" frameborder="0"></iframe>
 
 
 
@@ -107,15 +104,13 @@ it seems that climate category are pretty unrelated to our dutation prediction
 
 
 
-
-
 4. Interesting Aggregates
 We aggregated data to uncover significant patterns:
 
 Average Outage Duration by State:
 
 
-<iframe src="assets/power_outages_per_state.html" width="600" height="400" frameborder="0"></iframe>
+<iframe src="assets/Power_Outages_by_Climate_Category_and_State.html" width="600" height="400" frameborder="0"></iframe>
 
 
 5. Imputation
