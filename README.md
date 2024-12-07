@@ -106,15 +106,6 @@ it seems that climate category are pretty unrelated to our dutation prediction
 
 
 
-# Calculate the average outage duration for each anomaly level
-#it seems that anomaly level is pretty unrelated to our prediction of duration, i see no clear pattern
-
-<iframe src="assets/Average Outage Duration by Anomaly Level.html" width="600" height="400" frameborder="0"></iframe>
-
-
-Outage Duration vs Anomaly Level
-
-<iframe src="assets/Outage Duration vs Anomaly Level.html" width="600" height="400" frameborder="0"></iframe>
 
 
 
