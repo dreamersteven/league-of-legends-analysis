@@ -1,38 +1,64 @@
 # league-of-legends-analysis
-Step 1: Introduction
+Introduction
+The dataset used for this project documents major power outage events across the United States. It includes various dimensions such as the year, state, climate information, outage causes, outage duration, and the number of affected customers.
 
-The dataset used for this project documents major power outage events across the United States. It includes various dimensions such as year, state, climate information, outage causes, outage duration, and the number of affected customers. 
-Our question is the one is trying to predict the duration of the outrage when first signs of outrage appears: like complaint calls and warnings from the power grid. At this time, most of the detailed analysis are not availiable and we only have few info about the outrage: basically time, location and cliamte; we will use them to make an initial estimate of our outrage duration
+This project focuses on predicting the duration of a power outage when the first signs of an outage, such as complaint calls or warnings from the power grid, are detected. At this early stage, detailed information is often unavailable, and only basic attributes like time, location, and climate conditions are known. We aim to utilize this limited information to make an initial estimate of the outage duration, providing crucial insights for emergency response and resource allocation.
 
-OUTAGE.START.DATE: start date of the outrage
-OUTAGE.START.TIME: start time of the outrage
-U.S._STATE: state the outrage happens
-NERC.REGION: grid nerc region where the outrage happens
-CLIMATE.REGION: climate region of the outrage location
-CLIMATE.CATEGORY: climate type of the outrage location
-ANOMALY.LEVEL: climate anomaly level of the outrage
-OUTAGE.DURATION: we are trying to predict the duration of the outrage with our initial guess
+The key columns relevant to this prediction task are as follows:
+
+OUTAGE.START.DATE: The date when the outage began.
+OUTAGE.START.TIME: The time when the outage began.
+U.S._STATE: The state where the outage occurred.
+NERC.REGION: The NERC grid region associated with the outage.
+CLIMATE.REGION: The climate region of the outage location.
+CLIMATE.CATEGORY: The climate type of the outage location.
+ANOMALY.LEVEL: The level of climate anomaly in the outage location.
+OUTAGE.DURATION: The target variable, representing the duration of the outage.
+This analysis will explore patterns in the dataset, build predictive models, and evaluate their performance to provide actionable insights.
 
 Our initial dataframe have 8 rows and 1534 columns.
 
-Step 2: Data Cleaning and Exploratory Data Analysis
-Data Cleaning
-We perform the data cleaning and feature enginnering and convert the timestampe as sperarate year, month and date and hour. We do not use the time stamp directly and we extract more detailed info about them : YEAR, OUTAGE.START.MONTH,DAY_TYPE, OUTAGE.START. These newly added columns will be explained in the section below.
-We drop the NA columns since most of the NA columns are from the HURRICANE.NAMES column, which is outside the scope of our columns of interest. We only lost 21 rows during the DropNA process, and that sample size is insignificant to our total sample size.
+1.Data Cleaning
+We performed data cleaning and feature engineering to prepare the dataset for analysis:
 
+Feature Engineering:
 
+The OUTAGE.START.DATE and OUTAGE.START.TIME columns were split into separate components, such as YEAR, OUTAGE.START.MONTH, and OUTAGE.START.HOUR. This allows for a more granular analysis of the temporal patterns of outages.
+A new column, DAY_TYPE, was added to categorize outages based on whether they occurred on a weekday or weekend. This feature was included to analyze potential behavioral or systemic patterns in outage durations.
+Handling Missing Values:
 
+The HURRICANE.NAMES column contained missing values that were outside the scope of our analysis. Rows with missing values were dropped, resulting in the removal of 21 rows out of the entire dataset. This small loss of data is statistically insignificant and does not impact the overall quality of the dataset.
+Overview of Cleaned Data:
 
+After cleaning, the dataset includes the following relevant columns:
+YEAR: The year the outage occurred.
+OUTAGE.START.MONTH: The month when the outage began.
+DAY_TYPE: Whether the outage started on a weekday or weekend.
+CLIMATE.CATEGORY: The type of climate where the outage occurred.
+ANOMALY.LEVEL: The level of climate anomaly at the outage location.
+OUTAGE.DURATION: The duration of the outage, which is the target variable for prediction.
 
+2.Univariate Analysis
+To better understand the distribution of key variables, we performed univariate analyses on the following columns:
 
-
-
-
-
-
-
-hello world
-大家发一欧阿斯顿发看大家发建行卡发j
 <iframe src="assets/yearly_power_outages.html" width="800" height="600" frameborder="0"></iframe>
+
 <iframe src="assets/power_outages_by_state.html" width="800" height="600" frameborder="0"></iframe>
-<iframe src="assets/power_outages_by_climate_and_state.html" width="800" height="600" frameborder="0"></iframe>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<iframe src="assets/Power_Outages_by_Climate_Category_and_State.html" width="800" height="600" frameborder="0"></iframe>
